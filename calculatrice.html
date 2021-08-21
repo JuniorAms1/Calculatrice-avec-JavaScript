@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+
+    <title>Calculatrice</title>
+  </head>
+  <body>
+     <div class="table-responsive">
+    <table border="1" class="table align-middle" style="width: auto;margin: 35px 550px;text-align: center;">
+       <tr>
+          <td colspan="3"><input id="output"/></td>
+          <td><button onclick="effacer()">c</button></td>
+       </tr>
+       <tr>
+          <td><button onclick="afficher('1')">1</button></td>
+          <td><button onclick="afficher('2')">2</button></td>
+          <td><button onclick="afficher('3')">3</button></td>
+          <td><button onclick="afficher('+')">+</button></td>
+       </tr>
+       <tr>
+          <td><button onclick="afficher('4')">4</button></td>
+          <td><button onclick="afficher('5')">5</button></td>
+          <td><button onclick="afficher('6')">6</button></td>
+          <td><button onclick="afficher('-')">-</button></td>
+       </tr>
+       <tr>
+          <td><button onclick="afficher('7')">7</button></td>
+          <td><button onclick="afficher('8')">8</button></td>
+          <td><button onclick="afficher('9')">9</button></td>
+          <td><button onclick="afficher('*')">*</button></td>
+       </tr>
+       <tr>
+          <td><button onclick="afficher('.')">.</button></td>
+          <td><button onclick="afficher('0')">0</button></td>
+          <td><button onclick="calculer()">=</button></td>
+          <td><button onclick="afficher('/')">/</button></td>
+       </tr>
+    </table>
+   </div>
+  </body>
+</html>
+
+
+      <script>
+         //fonction qui évalue le chiffre et renvoie la sortie
+         function calculer()
+         {
+             let a = document.getElementById("output").value
+             let b = eval(a)
+             document.getElementById("output").value = b
+         }
+         //fonction qui affiche la valeur
+         function afficher(val)
+         {
+             document.getElementById("output").value+=val
+         }
+         //fonction qui efface l'écran
+         function effacer()
+         {
+             document.getElementById("output").value = ""
+         }
+      </script>
